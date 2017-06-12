@@ -1,8 +1,8 @@
 OpenCV opencvh;
 Histogram histogram;
 
-int lowerb = 76;
-int upperb = 77;
+int lowerb = 9;
+int upperb = 10;
 
 PImage Color(PImage img){
   opencvh = new OpenCV(this, img);

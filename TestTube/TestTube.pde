@@ -1,10 +1,12 @@
 import gab.opencv.*;
 PImage img, img2;
 Contour countour;
-
+String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
 void setup() {
-  img = loadImage("GOPR8950.JPG");
-  img2 = loadImage("GOPR8951.JPG");
+  println(path);
+  String[] fileNames = listFileNames(path);
+  img = loadImage("\\Pictures\\" + fileNames[0]);
+  img2 = loadImage("\\Pictures\\" + fileNames[1]);
 size(1500, 720);
 
 }
@@ -40,4 +42,15 @@ void keyPressed(){
    upperb = constrain(upperb, lowerb, 255);
   lowerb = constrain(lowerb, 0, upperb-1);
 
+}
+// This function returns all the files in a directory as an array of Strings  
+String[] listFileNames(String dir) {
+  File file = new File(dir);
+  if (file.isDirectory()) {
+    String names[] = file.list();
+    return names;
+  } else {
+    // If it's not a directory
+    return null;
+  }
 }

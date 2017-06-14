@@ -8,10 +8,10 @@ ArrayList<Contour> polygons;
 *Takes the image of one color that Histogram spits out and finds contour lines on it
 *
 **/
-float FindLines(PImage src){
+float FindLines(OpenCV src){
   
-  src = opencvh.getOutput();
-  opencvc = new OpenCV(this, src);
+ 
+  opencvc = src;
   
   opencvc.gray();
   opencvc.threshold(70);
@@ -33,8 +33,8 @@ float FindLines(PImage src){
     stroke(255, 0, 0);
     beginShape();
     for (PVector point : contour.getPolygonApproximation().getPoints()) {
-      vertex(point.x, point.y);
-      y[i]= point.y;
+      vertex(point.x + (x1*4), point.y + (y1*4));
+      y[i]= point.y + (y1*4);
    // println(point.x + ", " + point.y);
       i++;
     }

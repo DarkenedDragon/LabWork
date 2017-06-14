@@ -2,6 +2,7 @@ import gab.opencv.*;
 PImage img, img2;
 Contour countour;
 String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
+int step =0;
 void setup() {
   println(path);
   String[] fileNames = listFileNames(path);
@@ -16,11 +17,23 @@ void draw() {
   scale(0.25);
   image(img, 0, 0, img.width, img.height);
   image(img2, img.width, 0, img.width, img.height);
-  //scale(0.5);
+switch(step){
+  case 0:
+  ROI(Color(img));
+  break;
+  case 1:
+  println("case 1 ran");
+  FindLines(ROI(Color(img)));
+  break;
+  case 2:
+  
+  break;
+  
+  
+  
+}
 
-  //Color();
-//ndLines(Color(img));
-
+/*
   float distance = (FindLines(Color(img)) - FindLines(Color(img2)));
   println("Moved: " + distance);
   strokeWeight(10);
@@ -29,6 +42,7 @@ void draw() {
   Graph();
   textSize(72);
 text(distance, 600, (FindLines(Color(img2)) - FindLines(Color(img)))/2 + FindLines(Color(img)));
+*/
 }
 
 void keyPressed(){

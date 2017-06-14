@@ -1,2 +1,0 @@
-Image 1 max height :2159.0 pixels
-Image 2 max height :2410.0 pixels

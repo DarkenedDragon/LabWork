@@ -1,14 +1,18 @@
 
 OpenCV opencv;
 int i = 0;
-int x1, x2, y1, y2;
+int x1, w, y1, h;
 OpenCV ROI(PImage image){
   opencv = new OpenCV(this, image);
   noFill();
-  rect(x1, y1, (mouseX - x1)*4, (mouseY - y1)*4);
-  opencv.setROI(x1*4, y1*4, x2*4, y2*4);
+  rect(x1*4, y1*4, (mouseX - x1)*4, (mouseY - y1)*4);
+  
+  //dragging causes crash
+  
+  opencv.setROI(x1*4, y1*4, w*4, h*4);
+  
  if(i==2){
-   i++;
+   //i++;
    step++;
  }
  return opencv;
@@ -20,8 +24,8 @@ void mousePressed(){
     y1 = mouseY;
     i++;
   }else{
-    x2 = mouseX - x1;
-    y2 = mouseY - y1;
+    w = mouseX - x1;
+    h = mouseY - y1;
     i++;
   }
   

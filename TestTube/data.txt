@@ -1,0 +1,2 @@
+Image 0 lowest point : 2571.0 pixels
+Image 1 lowest point : 1408.0 pixels

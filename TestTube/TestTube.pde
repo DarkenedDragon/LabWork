@@ -3,34 +3,49 @@ PImage img, img2;
 Contour countour;
 String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
 int step =0;
+String[] fileNames = listFileNames(path);
+int file = 0;
+PrintWriter output;
 void setup() {
+  output = createWriter("data.txt");
   println(path);
-  String[] fileNames = listFileNames(path);
+  
   img = loadImage("\\Pictures\\" + fileNames[0]);
-  img2 = loadImage("\\Pictures\\" + fileNames[1]);
+  //img2 = loadImage("\\Pictures\\" + fileNames[1]);
 size(1500, 720);
 
 }
 void draw() {
+  img = loadImage("\\Pictures\\" + fileNames[file]);
+  
   background(255);
    
   scale(0.25);
   image(img, 0, 0, img.width, img.height);
-  image(img2, img.width, 0, img.width, img.height);
+  //image(img2, img.width, 0, img.width, img.height);
+  
 switch(step){
   case 0:
   ROI(Color(img));
   break;
   case 1:
   println("case 1 ran");
-  FindLines(ROI(Color(img)));
+  output.println("Image " + (file + 1) + " lowest point : " + FindLines(ROI(Color(img))) + " pixels");
   break;
   case 2:
-  
+  println("Case 2 ran");
+  if(file == fileNames.length-1){
+    step++;
+  }else{
+    file++;
+    step=0;
+  }
   break;
-  
-  
-  
+  case 3:
+  output.flush();
+  output.close();
+  exit();
+  break;
 }
 
 /*

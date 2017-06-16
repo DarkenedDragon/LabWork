@@ -3,42 +3,41 @@ import java.util.Date;
 PImage img, img2;
 Contour countour;
 String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
-int step =0;
+int step = 0;
 File[] files = listFiles(path);
 long[] times = new long[files.length];
 float[] lowPoint = new float[files.length];
 int file = 0;
 PrintWriter output;
+
 void setup() {
   output = createWriter("data.txt");
-  println(path);
-  
-  //img = loadImage("\\Pictures\\" + fileNames[0]);
-  //img2 = loadImage("\\Pictures\\" + fileNames[1]);
-size(1500, 720);
+  frameRate(120);
+  size(1500, 720);
 
 }
 void draw() {
+  //loads the image
   File f = files[file];
   img = loadImage("\\Pictures\\" + f.getName());
-  
+  //displays the image to the screen
   background(255);
-   
   scale(0.25);
   image(img, 0, 0, img.width, img.height);
-  //image(img2, img.width, 0, img.width, img.height);
   
+  //start of main program
 switch(step){
+  //gets the user's input for where the program should focus on. This is to help eliminate noise
   case 0:
     ROI(Color(img));
   break;
-  
+  //This runs the FindLines class. It also displays the results of all parts of the program run so far
   case 1:
-    println("case 1 ran");
+  //assigns values to array's and to new variables
     String lastModified = new Date(f.lastModified()).toString();
     lowPoint[file] = FindLines(ROI(Color(img)));
     times[file] = f.lastModified();
-
+//writes the results to the data.txt file
     if(file > 0){ 
       output.print("Image " + (file + 1) + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
       float distance = lowPoint[file] - lowPoint[file - 1];
@@ -47,11 +46,9 @@ switch(step){
     }else{
       output.println("Image " + (file + 1) + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
     }
-    
   break;
-  
+  //This step checks to see if there are any more images to process
   case 2:
-    println("Case 2 ran");
     if(file == files.length-1){
       step++;
     }else{
@@ -59,7 +56,7 @@ switch(step){
     step=0;
     }
   break;
-  
+  //This step does the time calculations and finishes up the data.txt file. At the end of this step the program exits. 
   case 3:
   long max = 0;
   long min = times[files.length-1];
@@ -84,6 +81,7 @@ long hours = minutes/60;
 }
 
 /*
+//Optional code that displays the distance on the image. Not really nessisary. 
   float distance = (FindLines(Color(img)) - FindLines(Color(img2)));
   println("Moved: " + distance);
   strokeWeight(10);
@@ -94,20 +92,10 @@ long hours = minutes/60;
 text(distance, 600, (FindLines(Color(img2)) - FindLines(Color(img)))/2 + FindLines(Color(img)));
 */
 }
-
-void keyPressed(){
-  if(keyCode == RIGHT){
-    upperb += 2;
-    lowerb += 2;
-  }else if(keyCode == LEFT){
-    upperb -= 2;
-    lowerb -= 2;
-  }
-   upperb = constrain(upperb, lowerb, 255);
-  lowerb = constrain(lowerb, 0, upperb-1);
-
-}
-// This function returns all the files in a directory as an array of Strings  
+/** 
+*This function returns all the files in a directory as an array of Strings
+*This code is taken from the processing examples page here : https://processing.org/examples/directorylist.html
+**/
 String[] listFileNames(String dir) {
   File file = new File(dir);
   if (file.isDirectory()) {
@@ -118,7 +106,10 @@ String[] listFileNames(String dir) {
     return null;
   }
 }
-// This function returns all the files in a directory as an array of Files  
+/** 
+*This function returns all the files in a directory as an array of Files
+*This code is taken from the processing examples page here : https://processing.org/examples/directorylist.html
+**/
 File[] listFiles(String dir){
   File file = new File(dir);
   if(file.isDirectory()){

@@ -16,7 +16,6 @@ OpenCV ROI(PImage image){
   opencv.setROI(x1*4, y1*4, w*4, h*4);
   
  if(i==2){
-   //i++;
    step++;
  }
  return opencv;

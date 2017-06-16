@@ -13,7 +13,7 @@ PrintWriter output;
 void setup() {
   output = createWriter("data.txt");
   frameRate(120);
-  size(1500, 720);k
+  size(1500, 720);
 }
 void draw() {
   //loads the image

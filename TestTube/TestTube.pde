@@ -1,22 +1,25 @@
 import gab.opencv.*;
+import java.util.Date;
 PImage img, img2;
 Contour countour;
 String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
 int step =0;
-String[] fileNames = listFileNames(path);
+File[] files = listFiles(path);
+long[] times = new long[files.length];
 int file = 0;
 PrintWriter output;
 void setup() {
   output = createWriter("data.txt");
   println(path);
   
-  img = loadImage("\\Pictures\\" + fileNames[0]);
+  //img = loadImage("\\Pictures\\" + fileNames[0]);
   //img2 = loadImage("\\Pictures\\" + fileNames[1]);
 size(1500, 720);
 
 }
 void draw() {
-  img = loadImage("\\Pictures\\" + fileNames[file]);
+  File f = files[file];
+  img = loadImage("\\Pictures\\" + f.getName());
   
   background(255);
    
@@ -26,25 +29,42 @@ void draw() {
   
 switch(step){
   case 0:
-  ROI(Color(img));
+    ROI(Color(img));
   break;
+  
   case 1:
-  println("case 1 ran");
-  output.println("Image " + (file + 1) + " lowest point : " + FindLines(ROI(Color(img))) + " pixels");
+    println("case 1 ran");
+    String lastModified = new Date(f.lastModified()).toString();
+    output.println("Image " + (file + 1) + " lowest point : " + FindLines(ROI(Color(img))) + " pixels at " + lastModified);
+    times[file] = f.lastModified();
   break;
+  
   case 2:
-  println("Case 2 ran");
-  if(file == fileNames.length-1){
-    step++;
-  }else{
-    file++;
+    println("Case 2 ran");
+    if(file == files.length-1){
+      step++;
+    }else{
+      file++;
     step=0;
-  }
+    }
   break;
+  
   case 3:
-  output.flush();
-  output.close();
-  exit();
+  long max = 0;
+  long min = 0;
+for(int i = 0;i<times.length-1;i++){
+  if(times[i] > times[i+1]){
+    max = times[i];
+    min = times[i+1];
+  }else{
+    max = times[i+1];
+    min = times[i];
+  }
+}
+  output.println("Time taken :" + (max - min)/1000 + " seconds");
+    output.flush();
+    output.close();
+    exit();
   break;
 }
 
@@ -79,6 +99,17 @@ String[] listFileNames(String dir) {
     String names[] = file.list();
     return names;
   } else {
+    // If it's not a directory
+    return null;
+  }
+}
+// This function returns all the files in a directory as an array of Files  
+File[] listFiles(String dir){
+  File file = new File(dir);
+  if(file.isDirectory()){
+    File[] files = file.listFiles();
+    return files;
+  }else{
     // If it's not a directory
     return null;
   }

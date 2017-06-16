@@ -4,6 +4,10 @@ int i = 0;
 int x1, w, y1, h;
 OpenCV ROI(PImage image){
   opencv = new OpenCV(this, image);
+  if(i <= 0){
+    x1 = mouseX;
+    y1 = mouseY;
+  }
   noFill();
   rect(x1*4, y1*4, (mouseX - x1)*4, (mouseY - y1)*4);
   
@@ -24,8 +28,8 @@ void mousePressed(){
     y1 = mouseY;
     i++;
   }else{
-    w = mouseX - x1;
-    h = mouseY - y1;
+    w = (mouseX - x1);
+    h = (mouseY - y1);
     i++;
   }
   

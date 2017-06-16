@@ -2,6 +2,10 @@
 OpenCV opencv;
 int i = 0;
 int x1, w, y1, h;
+
+/**
+* This code is modified from
+**/
 OpenCV ROI(PImage image){
   opencv = new OpenCV(this, image);
   if(i <= 0){
@@ -21,6 +25,9 @@ OpenCV ROI(PImage image){
  return opencv;
  
 }
+/**
+* Functiont that assigns the corners of the ROI to the points clicked upon
+**/
 void mousePressed(){
   if(i%2==0){
     x1 = mouseX;

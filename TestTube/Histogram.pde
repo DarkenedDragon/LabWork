@@ -4,6 +4,10 @@ Histogram histogram;
 int lowerb = 9;
 int upperb = 10;
 
+/**
+* This code is modified from
+
+**/
 PImage Color(PImage img){
   opencvh = new OpenCV(this, img);
   opencvh.useColor(HSB);

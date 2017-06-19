@@ -4,6 +4,8 @@ Histogram histogram;
 int lowerb = 9;
 int upperb = 10;
 
+int test;
+
 /**
 * This code is modified from
 

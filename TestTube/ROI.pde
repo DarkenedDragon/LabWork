@@ -14,7 +14,7 @@ OpenCV ROI(PImage image){
   
   //dragging causes crash
   
-  opencv.setROI(x1*4, y1*4, w*4, h*4);
+  opencv.setROI(x1*4, y1*4, w*4, h*4); 
   
  if(i==2){
    step++;
@@ -44,6 +44,7 @@ void mousePressed(){
   }
   
 }
+void mouseDragged(){}
 /*
 void mouseReleased(){
     w = (mouseX - x1);

@@ -1,9 +1,19 @@
 import gab.opencv.*;
 import java.util.Date;
+import controlP5.*;
+
+ControlP5 cp5;
+int upper = 50;
+int lower = 50;
+int confirm = 0;
+
+int myColor = color(0,0,0);
+
 PImage img, img2;
 Contour countour;
 String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
 int step = 0;
+int phase = 0;
 File[] files = listFiles(path);
 long[] times = new long[files.length];
 float[] lowPoint = new float[files.length];
@@ -11,11 +21,54 @@ int file = 0;
 PrintWriter output;
 
 void setup() {
+  
   output = createWriter("data.txt");
   frameRate(120);
   size(1500, 720);
+  cp5 = new ControlP5(this);
+  cp5.addSlider("upper")
+  .setSize(500, 100)
+  .setPosition(width/2 - 250,height/4)
+  .setRange(0,255)
+  ;
+  cp5.addSlider("lower")
+  .setSize(500, 100)
+  .setPosition(width/2 - 250, (3/4)*height)
+  .setRange(0,255)
+  ;
+  
+  cp5.getController("upper").getCaptionLabel().setColor(color(10,20,30,140));
+  cp5.getController("upper").getCaptionLabel().setSize(25);
+  cp5.getController("lower").getCaptionLabel().setColor(color(10,20,30,140));
+  cp5.getController("lower").getCaptionLabel().setSize(25);
+  
+  cp5.addButton("Confirm")
+  .setSize(100, 100)
+  .setPosition(width/2-50, height/2)
+  .setValue(0);
+  
+  cp5.getController("Confirm").getCaptionLabel().setSize(25);
+}
+void slider(float theColor) {
+  myColor = color(theColor);
+  println("a slider event. setting background to "+theColor);
 }
 void draw() {
+  switch(phase){
+    case 0:
+    background(255);
+  upperb = (int)cp5.getController("upper").getValue();
+  lowerb = (int)cp5.getController("lower").getValue();
+  break;
+  
+  case 1:
+cp5.remove("Confirm");
+cp5.remove("upper");
+cp5.remove("lower");
+i=0;
+phase++;
+break;
+case 2:
   //loads the image
   File f = files[file];
   img = loadImage("\\Pictures\\" + f.getName());
@@ -23,15 +76,17 @@ void draw() {
   background(255);
   scale(0.25);
   image(img, 0, 0, img.width, img.height);
-  
+    
   //start of main program
 switch(step){
   //gets the user's input for where the program should focus on. This is to help eliminate noise
   case 0:
+  println("i: " + i);
     ROI(Color(img));
   break;
   //This runs the FindLines class. It also displays the results of all parts of the program run so far
   case 1:
+  println("Line 85 ran");
   //assigns values to array's and to new variables
     String lastModified = new Date(f.lastModified()).toString();
     lowPoint[file] = FindLines(ROI(Color(img)));
@@ -78,7 +133,9 @@ long hours = minutes/60;
     exit();
   break;
 }
-
+break;
+  }
+  
 /*
 //Optional code that displays the distance on the image. Not really nessisary. 
   float distance = (FindLines(Color(img)) - FindLines(Color(img2)));
@@ -118,4 +175,13 @@ File[] listFiles(String dir){
     // If it's not a directory
     return null;
   }
+}
+public void controlEvent(ControlEvent theEvent) {
+  println(theEvent.getController().getName());
+}
+void Confirm(){
+  if(confirm > 0){
+    phase ++;
+  }
+  confirm++;
 }

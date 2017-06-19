@@ -1,3 +1,0 @@
-Image 1 lowest point : 2401.0 pixels at Mon Jun 19 12:50:02 EDT 2017
-Image 2 lowest point : 2577.0 pixels at Mon Jun 19 12:50:46 EDT 2017 Moved 176.0 pixels in 44 seconds
-Time taken :0 hours 0 minutes 44 seconds

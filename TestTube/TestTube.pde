@@ -11,17 +11,22 @@ int myColor = color(0,0,0);
 
 PImage img, img2;
 Contour countour;
-String path = "C:\\Users\\EJ\\LabWork\\TestTube\\Pictures";
+String path;
 int step = 0;
 int phase = 0;
-File[] files = listFiles(path);
-long[] times = new long[files.length];
-float[] lowPoint = new float[files.length];
+File[] files;
+long[] times;
+float[] lowPoint;
 int file = 0;
 PrintWriter output;
 
 void setup() {
-  
+  path = sketchPath();
+  files = listFiles(path + "\\Pictures");
+  times = new long[files.length];
+  lowPoint = new float[files.length];
+  println(path);
+
   output = createWriter("data.txt");
   frameRate(120);
   size(1500, 720);

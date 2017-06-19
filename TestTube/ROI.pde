@@ -1,6 +1,6 @@
 OpenCV opencv;
 int i = 0;
-int x1, w, y1, h;
+int x1, y1, x2, y2, w, h;
 
 /**
 * This code is modified from
@@ -11,9 +11,20 @@ OpenCV ROI(PImage image){
     x1 = mouseX;
     y1 = mouseY;
   }
+  if(x1 > x2){
+    int temp = x1;
+    x1 = x2;
+    x2 = temp;
+  }
+  if(y1 > y2){
+    int temp = y1;
+    y1 = y2;
+    y2 = temp;
+  }
+  w = x2 - x1;
+  h = y2 - y1;
   
-  
-  opencv.setROI(x1*4, y1*4, w*4, h*4); 
+  opencv.setROI(x1*4, y1*4, w*4, h*4);
   
  if(i==2){
    step++;
@@ -44,7 +55,7 @@ void mousePressed(){
  */ 
 }
 void mouseReleased(){
-    w = (mouseX - x1);
-    h = (mouseY - y1);
+    x2 = mouseX;
+    y2 = mouseY;
     i++;
   }

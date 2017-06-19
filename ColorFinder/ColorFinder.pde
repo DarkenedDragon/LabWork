@@ -42,6 +42,12 @@ void draw() {
   text(lowerb, lb-10, height-15);
   ellipse(ub+10, height-30, 3, 3 );
   text(upperb, ub+10, height-15);
+  
+  textSize(21);
+  text("Lower bound: " + lowerb, 425, height - (textAscent() + textDescent())-10);
+  text("Upper bound: " + upperb, 425, height - (textAscent() + textDescent())+15);
+  textSize(12);
+
 }
 
 void keyPressed(){

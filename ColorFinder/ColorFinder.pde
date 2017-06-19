@@ -8,7 +8,7 @@ int lowerb = 8;
 int upperb = 10;
 
 void setup() {
-  img = loadImage("IMG_0001.JPG");
+  img = loadImage("IMG_0018.JPG");
   opencv = new OpenCV(this, img);
   size(1024, 768);
   opencv.useColor(HSB);

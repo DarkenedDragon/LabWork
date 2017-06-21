@@ -82,11 +82,16 @@ case 2:
   //loads the image
   File f = files[file];
   img = loadImage("\\Pictures\\" + f.getName());
+  
   //displays the image to the screen
   background(255);
   scale(0.25);
-  image(img, 0, 0, img.width, img.height);
-    
+  tint(255,127);
+  //displays all the images 50% opaque so the user can be sure to draw an ROI around all of them
+  for(int j = 0;j<files.length;j++){
+  PImage image = loadImage("\\Pictures\\" + files[j].getName());
+  image(image, 0, 0, img.width, img.height);
+  }
   //start of main program
 switch(step){
   //gets the user's input for where the program should focus on. This is to help eliminate noise
@@ -146,17 +151,6 @@ long hours = minutes/60;
 break;
   }
   
-/*
-//Optional code that displays the distance on the image. Not really nessisary. 
-  float distance = (FindLines(Color(img)) - FindLines(Color(img2)));
-  println("Moved: " + distance);
-  strokeWeight(10);
-  line(1100,FindLines(Color(img)),1100, FindLines(Color(img2)));
- 
-  Graph();
-  textSize(72);
-text(distance, 600, (FindLines(Color(img2)) - FindLines(Color(img)))/2 + FindLines(Color(img)));
-*/
 }
 /** 
 *This function returns all the files in a directory as an array of Strings

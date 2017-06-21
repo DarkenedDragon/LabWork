@@ -86,12 +86,7 @@ case 2:
   //displays the image to the screen
   background(255);
   scale(0.25);
-  tint(255,127);
-  //displays all the images 50% opaque so the user can be sure to draw an ROI around all of them
-  for(int j = 0;j<files.length;j++){
-  PImage image = loadImage("\\Pictures\\" + files[j].getName());
-  image(image, 0, 0, img.width, img.height);
-  }
+  image(img, 0, 0, img.width, img.height);
   //start of main program
 switch(step){
   //gets the user's input for where the program should focus on. This is to help eliminate noise

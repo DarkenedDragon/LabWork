@@ -103,12 +103,12 @@ switch(step){
     times[file] = f.lastModified();
 //writes the results to the data.txt file
     if(file > 0){ 
-      output.print("Image " + (file + 1) + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
+      output.print("Image " + f.getName() + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
       float distance = lowPoint[file] - lowPoint[file - 1];
       long time = (times[file] - times[file - 1])/1000; 
       output.println(" Moved " + distance + " pixels in " + time + " seconds");
     }else{
-      output.println("Image " + (file + 1) + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
+      output.println("Image " + f.getName() + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
     }
   break;
   //This step checks to see if there are any more images to process
@@ -131,8 +131,6 @@ for(int i = 0;i<times.length;i++){
   if(times[i] < min){
     min = times[i];
   }
-  println(times[i]);
-  println("Max: " + max + " Min: " + min);
 }
 long seconds = (max - min)/1000;
 long minutes = seconds/60;

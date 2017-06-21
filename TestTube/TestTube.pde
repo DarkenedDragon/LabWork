@@ -31,6 +31,7 @@ void setup() {
   frameRate(120);
   size(1500, 720);
   cp5 = new ControlP5(this);
+  //adding sliders to control the upper and lower bounds of the histogram
   cp5.addSlider("upper")
   .setSize(500, 100)
   .setPosition(width/2 - 250,height/4)
@@ -41,12 +42,12 @@ void setup() {
   .setPosition(width/2 - 250, (3/4)*height)
   .setRange(0,255)
   ;
-  
+  //Makes the captions more readable
   cp5.getController("upper").getCaptionLabel().setColor(color(10,20,30,140));
   cp5.getController("upper").getCaptionLabel().setSize(25);
   cp5.getController("lower").getCaptionLabel().setColor(color(10,20,30,140));
   cp5.getController("lower").getCaptionLabel().setSize(25);
-  
+  //adds a "Confirm" button to advance to the next phase
   cp5.addButton("Confirm")
   .setSize(100, 100)
   .setPosition(width/2-50, height/2)
@@ -54,6 +55,7 @@ void setup() {
   
   cp5.getController("Confirm").getCaptionLabel().setSize(25);
 }
+//Event listener
 void slider(float theColor) {
   myColor = color(theColor);
   println("a slider event. setting background to "+theColor);
@@ -62,17 +64,20 @@ void draw() {
   switch(phase){
     case 0:
     background(255);
+    //gets the user's input for the bounds of the histogram
   upperb = (int)cp5.getController("upper").getValue();
   lowerb = (int)cp5.getController("lower").getValue();
   break;
   
   case 1:
+  //removes the sliders and button
 cp5.remove("Confirm");
 cp5.remove("upper");
 cp5.remove("lower");
 i=0;
 phase++;
 break;
+//Main program runs
 case 2:
   //loads the image
   File f = files[file];

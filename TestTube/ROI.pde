@@ -11,6 +11,7 @@ OpenCV ROI(PImage image){
     x1 = mouseX;
     y1 = mouseY;
   }
+  //moves the first point to the top left corner to prevent that weird bug
   if(x1 > x2){
     int temp = x1;
     x1 = x2;
@@ -23,7 +24,7 @@ OpenCV ROI(PImage image){
   }
   w = x2 - x1;
   h = y2 - y1;
-  
+  //sets the Region Of Interest (ROI)
   opencv.setROI(x1*4, y1*4, w*4, h*4);
   
  if(i==2){
@@ -38,7 +39,7 @@ OpenCV ROI(PImage image){
  
 }
 /**
-* Functiont that assigns the corners of the ROI to the points clicked upon
+* Function that assigns the corners of the ROI to the points clicked upon
 **/
 void mousePressed(){
   if(i%2==0){
@@ -46,13 +47,7 @@ void mousePressed(){
     y1 = mouseY;
     i++;
   }
-  /*
-  else{
-    w = (mouseX - x1);
-    h = (mouseY - y1);
-    i++;
-  }
- */ 
+
 }
 void mouseReleased(){
     x2 = mouseX;

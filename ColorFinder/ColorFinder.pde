@@ -65,7 +65,7 @@ void keyPressed(){
   }else if(keyCode == LEFT){
     upperb -= 2;
     lowerb -= 2;
-  }else if(keyCode == UP && count <=fileNames.length-1){
+  }else if(keyCode == UP && count <fileNames.length-1){
     count++;
   }else if(keyCode == DOWN && count > 1){
     count--;

@@ -6,6 +6,7 @@ ControlP5 cp5;
 int upper = 50;
 int lower = 50;
 int confirm = 0;
+int interval = 1;
 
 int myColor = color(0,0,0);
 
@@ -36,21 +37,32 @@ void setup() {
   .setSize(500, 100)
   .setPosition(width/2 - 250,height/4)
   .setRange(0,255)
+  .setValue(10)
   ;
   cp5.addSlider("lower")
   .setSize(500, 100)
   .setPosition(width/2 - 250, (3/4)*height)
   .setRange(0,255)
+  .setValue(10)
+  ;
+  cp5.addSlider("Interval (seconds)")
+  .setSize(500, 100)
+  .setPosition(width/2 - 250, height/2)
+  .setRange(0, 60)
+  .setNumberOfTickMarks(13)
+  .setValue(5);
   ;
   //Makes the captions more readable
   cp5.getController("upper").getCaptionLabel().setColor(color(10,20,30,140));
   cp5.getController("upper").getCaptionLabel().setSize(25);
   cp5.getController("lower").getCaptionLabel().setColor(color(10,20,30,140));
   cp5.getController("lower").getCaptionLabel().setSize(25);
+  cp5.getController("Interval (seconds)").getCaptionLabel().setColor(color(10,20,30,140));
+  cp5.getController("Interval (seconds)").getCaptionLabel().setSize(25);
   //adds a "Confirm" button to advance to the next phase
   cp5.addButton("Confirm")
   .setSize(100, 100)
-  .setPosition(width/2-50, height/2)
+  .setPosition(width/2-50, height - 150)
   .setValue(0);
   
   cp5.getController("Confirm").getCaptionLabel().setSize(25);
@@ -67,6 +79,7 @@ void draw() {
     //gets the user's input for the bounds of the histogram
   upperb = (int)cp5.getController("upper").getValue();
   lowerb = (int)cp5.getController("lower").getValue();
+  interval = (int)cp5.getController("Interval (seconds)").getValue();
   break;
   
   case 1:
@@ -74,6 +87,7 @@ void draw() {
 cp5.remove("Confirm");
 cp5.remove("upper");
 cp5.remove("lower");
+cp5.remove("Interval (seconds)");
 i=0;
 phase++;
 break;
@@ -189,14 +203,14 @@ void saveCSV(){
   Table table = new Table();
   table.addColumn("Image");
   table.addColumn("Height");
-  table.addColumn("Time");
+  table.addColumn("Time (sec)");
   
   for(int i = 0;i<files.length;i++){
     TableRow row = table.addRow();
     File file = files[i];
   row.setString("Image", file.getName());
   row.setInt("Height", (int)lowPoint[i]);
-  row.setString("Time",new Date(file.lastModified()).toString());
+  row.setInt("Time (sec)",interval * i);
   }
   saveTable(table, "dataX.csv");
 }

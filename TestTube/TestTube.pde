@@ -135,7 +135,7 @@ switch(step){
   
 saveCSV();
 
-int seconds = interval * (files.length);
+int seconds = interval * (files.length-1);
 int minutes = seconds/60;
 int hours = minutes/60;
   output.println("Time Taken : " + hours + " hours " + minutes + " minutes " + (seconds - minutes*60) + " seconds");

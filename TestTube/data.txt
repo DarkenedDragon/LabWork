@@ -1,0 +1,10 @@
+Image G0021008.JPG lowest point : 17.0 pixels at Wed Jun 28 11:05:53 EDT 2017
+Image G0021009.JPG lowest point : 61.0 pixels at Wed Jun 28 11:05:53 EDT 2017 Moved 44.0 pixels in 0 seconds
+Image G0021010.JPG lowest point : 248.0 pixels at Wed Jun 28 11:05:54 EDT 2017 Moved 187.0 pixels in 0 seconds
+Image G0021011.JPG lowest point : 486.0 pixels at Wed Jun 28 11:05:54 EDT 2017 Moved 238.0 pixels in 0 seconds
+Image G0021012.JPG lowest point : 731.0 pixels at Wed Jun 28 11:05:54 EDT 2017 Moved 245.0 pixels in 0 seconds
+Image G0021013.JPG lowest point : 964.0 pixels at Wed Jun 28 11:05:54 EDT 2017 Moved 233.0 pixels in 0 seconds
+Image G0021014.JPG lowest point : 1212.0 pixels at Wed Jun 28 11:05:55 EDT 2017 Moved 248.0 pixels in 0 seconds
+Image G0021015.JPG lowest point : 1493.0 pixels at Wed Jun 28 11:05:55 EDT 2017 Moved 281.0 pixels in 0 seconds
+Image G0021016.JPG lowest point : 1490.0 pixels at Wed Jun 28 11:05:55 EDT 2017 Moved -3.0 pixels in 0 seconds
+Time taken :0 hours 0 minutes 1 seconds

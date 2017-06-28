@@ -24,7 +24,7 @@ float FindLines(OpenCV src){
   
   noFill();
   strokeWeight(3);
-  float[] maxHeight = new float[contours.size()];
+  float[] minHeight = new float[contours.size()];
   int count = 0;
   for (Contour contour : contours) {
  //stroke(0, 255, 0);
@@ -39,10 +39,10 @@ float FindLines(OpenCV src){
       i++;
     }
     endShape();
-    maxHeight[count] = max(y);
+    minHeight[count] = min(y);
     count++;
     
   }
-    println("Maximum Height: " + max(maxHeight));
-    return max(maxHeight);
+    println("Minimum Height: " + min(minHeight));
+    return min(minHeight);
 }

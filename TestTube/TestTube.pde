@@ -135,6 +135,9 @@ for(int i = 0;i<times.length;i++){
 long seconds = (max - min)/1000;
 long minutes = seconds/60;
 long hours = minutes/60;
+
+saveCSV();
+
   output.println("Time taken :" + hours + " hours " + minutes + " minutes " + (seconds - minutes*60) +  " seconds");
     output.flush();
     output.close();
@@ -181,4 +184,19 @@ void Confirm(){
     phase ++;
   }
   confirm++;
+}
+void saveCSV(){
+  Table table = new Table();
+  table.addColumn("Image");
+  table.addColumn("Height");
+  table.addColumn("Time");
+  
+  for(int i = 0;i<files.length;i++){
+    TableRow row = table.addRow();
+    File file = files[i];
+  row.setString("Image", file.getName());
+  row.setInt("Height", (int)lowPoint[i]);
+  row.setString("Time",new Date(file.lastModified()).toString());
+  }
+  saveTable(table, "dataX.csv");
 }

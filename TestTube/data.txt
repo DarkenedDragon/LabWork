@@ -1,9 +1,9 @@
-Image G0011029.JPG lowest point : 17.0 pixels at Wed Jun 28 11:40:48 EDT 2017
-Image G0011030.JPG lowest point : 17.0 pixels at Wed Jun 28 11:40:49 EDT 2017 Moved 0.0 pixels in 0 seconds
-Image G0011031.JPG lowest point : 17.0 pixels at Wed Jun 28 11:40:49 EDT 2017 Moved 0.0 pixels in 0 seconds
-Image G0011032.JPG lowest point : 308.0 pixels at Wed Jun 28 11:40:49 EDT 2017 Moved 291.0 pixels in 0 seconds
-Image G0011033.JPG lowest point : 677.0 pixels at Wed Jun 28 11:40:49 EDT 2017 Moved 369.0 pixels in 0 seconds
-Image G0011034.JPG lowest point : 1094.0 pixels at Wed Jun 28 11:40:49 EDT 2017 Moved 417.0 pixels in 0 seconds
-Image G0011035.JPG lowest point : 1560.0 pixels at Wed Jun 28 11:40:50 EDT 2017 Moved 466.0 pixels in 0 seconds
-Image G0011036.JPG lowest point : 1358.0 pixels at Wed Jun 28 11:40:50 EDT 2017 Moved -202.0 pixels in 0 seconds
-Time taken :0 hours 0 minutes 1 seconds
+Image G0011029.JPG lowest point : 9.0 pixels
+Image G0011030.JPG lowest point : 9.0 pixels Moved 0.0 pixels
+Image G0011031.JPG lowest point : 9.0 pixels Moved 0.0 pixels
+Image G0011032.JPG lowest point : 194.0 pixels Moved 185.0 pixels
+Image G0011033.JPG lowest point : 195.0 pixels Moved 1.0 pixels
+Image G0011034.JPG lowest point : 192.0 pixels Moved -3.0 pixels
+Image G0011035.JPG lowest point : 193.0 pixels Moved 1.0 pixels
+Image G0011036.JPG lowest point : 197.0 pixels Moved 4.0 pixels
+Time Taken : 0 hours 0 minutes 35 seconds

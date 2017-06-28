@@ -16,7 +16,6 @@ String path;
 int step = 0;
 int phase = 0;
 File[] files;
-long[] times;
 float[] lowPoint;
 int file = 0;
 PrintWriter output;
@@ -24,7 +23,6 @@ PrintWriter output;
 void setup() {
   path = sketchPath();
   files = listFiles(path + "\\Pictures");
-  times = new long[files.length];
   lowPoint = new float[files.length];
   println(path);
 
@@ -114,15 +112,13 @@ switch(step){
   //assigns values to array's and to new variables
     String lastModified = new Date(f.lastModified()).toString();
     lowPoint[file] = FindLines(ROI(Color(img)));
-    times[file] = f.lastModified();
 //writes the results to the data.txt file
     if(file > 0){ 
-      output.print("Image " + f.getName() + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
+      output.print("Image " + f.getName() + " lowest point : " + lowPoint[file] + " pixels");
       float distance = lowPoint[file] - lowPoint[file - 1];
-      long time = (times[file] - times[file - 1])/1000; 
-      output.println(" Moved " + distance + " pixels in " + time + " seconds");
+      output.println(" Moved " + distance + " pixels");
     }else{
-      output.println("Image " + f.getName() + " lowest point : " + lowPoint[file] + " pixels at " + lastModified);
+      output.println("Image " + f.getName() + " lowest point : " + lowPoint[file] + " pixels");
     }
   break;
   //This step checks to see if there are any more images to process
@@ -136,23 +132,13 @@ switch(step){
   break;
   //This step does the time calculations and finishes up the data.txt file. At the end of this step the program exits. 
   case 3:
-  long max = 0;
-  long min = times[files.length-1];
-for(int i = 0;i<times.length;i++){
-  if(times[i] > max){
-    max = times[i];
-  }
-  if(times[i] < min){
-    min = times[i];
-  }
-}
-long seconds = (max - min)/1000;
-long minutes = seconds/60;
-long hours = minutes/60;
-
+  
 saveCSV();
 
-  output.println("Time taken :" + hours + " hours " + minutes + " minutes " + (seconds - minutes*60) +  " seconds");
+int seconds = interval * (files.length);
+int minutes = seconds/60;
+int hours = minutes/60;
+  output.println("Time Taken : " + hours + " hours " + minutes + " minutes " + (seconds - minutes*60) + " seconds");
     output.flush();
     output.close();
     exit();

@@ -1,9 +1,0 @@
-Image G0011029.JPG lowest point : 9.0 pixels
-Image G0011030.JPG lowest point : 9.0 pixels Moved 0.0 pixels
-Image G0011031.JPG lowest point : 9.0 pixels Moved 0.0 pixels
-Image G0011032.JPG lowest point : 194.0 pixels Moved 185.0 pixels
-Image G0011033.JPG lowest point : 195.0 pixels Moved 1.0 pixels
-Image G0011034.JPG lowest point : 192.0 pixels Moved -3.0 pixels
-Image G0011035.JPG lowest point : 193.0 pixels Moved 1.0 pixels
-Image G0011036.JPG lowest point : 197.0 pixels Moved 4.0 pixels
-Time Taken : 0 hours 0 minutes 35 seconds

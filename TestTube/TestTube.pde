@@ -110,7 +110,6 @@ switch(step){
   case 1:
   println("Line 85 ran");
   //assigns values to array's and to new variables
-    String lastModified = new Date(f.lastModified()).toString();
     lowPoint[file] = FindLines(ROI(Color(img)));
 //writes the results to the data.txt file
     if(file > 0){ 

@@ -21,6 +21,9 @@ float FindLines(OpenCV src){
 
   contours = opencvc.findContours();
   println("found " + contours.size() + " contours");
+  if(contours.size() == 0){
+    return 999;
+  }
   
   noFill();
   strokeWeight(3);

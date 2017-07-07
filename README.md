@@ -7,3 +7,4 @@ Instructions for use:
 3. Select the Region of Interest by dragging a rectangle around the area you wish to process. 
 4. Let the program run. It may take several minutes depending on the amount of pictures you are processing. The results can be found in the data.txt file.
 
+NOTE: If the returned value is 999, it is the programs's error message and means that it found nothing with in that ROI and color range. 

@@ -3,7 +3,7 @@ int i = 0;
 int x1, y1, x2, y2, w, h;
 
 /**
-* This code is modified from
+* This code is modified from https://github.com/atduskgreg/opencv-processing
 **/
 OpenCV ROI(PImage image){
   opencv = new OpenCV(this, image);

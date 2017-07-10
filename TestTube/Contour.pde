@@ -7,7 +7,7 @@ ArrayList<Contour> polygons;
 /**
 *Takes the image of one color that Histogram spits out and finds contour lines on it
 *
-*This code is modified from
+*This code is modified from https://github.com/atduskgreg/opencv-processing
 **/
 float FindLines(OpenCV src){
   

@@ -2,7 +2,7 @@
 This software is intended to be used to measure the progress of a moving or exapanding colored object.
 
 1. Transfer the pictures you wish to scan into the "Pictures" folder in ColorFinder.
- https://user-images.githubusercontent.com/24358893/28470279-46c82bee-6e07-11e7-89fa-b54bf1806120.png
+![screenshot 24](https://user-images.githubusercontent.com/24358893/28470278-46c77b72-6e07-11e7-9fd2-b47979ecdbd3.png)
 2. Run ColorFinder
 https://user-images.githubusercontent.com/24358893/28470281-46cbbf66-6e07-11e7-8b20-b293608e0380.png
 3. Find the upper and lower bounds of the color

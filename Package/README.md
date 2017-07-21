@@ -3,17 +3,22 @@ This software is intended to be used to measure the progress of a moving or exap
 
 1. Transfer the pictures you wish to scan into the "Pictures" folder in ColorFinder.
 ![screenshot 24](https://user-images.githubusercontent.com/24358893/28470278-46c77b72-6e07-11e7-9fd2-b47979ecdbd3.png)
+
 2. Run ColorFinder
 ![screenshot 25](https://user-images.githubusercontent.com/24358893/28470281-46cbbf66-6e07-11e7-8b20-b293608e0380.png)
+
 3. Find the upper and lower bounds of the color
 <img width="960" alt="screenshot 26" src="https://user-images.githubusercontent.com/24358893/28470280-46cb51ca-6e07-11e7-999a-637814b56c92.png">
+
 4. Having found the color range, put the images into the “Pictures” folder in TestTube
 ![screenshot 27](https://user-images.githubusercontent.com/24358893/28470282-46ce1b6c-6e07-11e7-95c5-7b1af2389431.png)
+
 5. Run the TestTube application
 <insert photo here>
-6. Set the duration between each image (it is assumed between 5-60 seconds) and the upper and lower bounds of your color range that you found in ColorFinder. Hit “Confirm” to advance to the next window.
 
+6. Set the duration between each image (it is assumed between 5-60 seconds) and the upper and lower bounds of your color range that you found in ColorFinder. Hit “Confirm” to advance to the next window.
 ![screenshot 28](https://user-images.githubusercontent.com/24358893/28470284-46d627a8-6e07-11e7-8b98-0ba4752e8231.png)
+
 7. By clicking and dragging your mouse, select the Region of Interest (ROI) for the program to scan. It will appear as a black rectangle.
 <insert image here>
 

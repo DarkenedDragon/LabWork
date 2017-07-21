@@ -4,24 +4,26 @@ This software is intended to be used to measure the progress of a moving or exap
 1. Transfer the pictures you wish to scan into the "Pictures" folder in ColorFinder.
 ![screenshot 24](https://user-images.githubusercontent.com/24358893/28470278-46c77b72-6e07-11e7-9fd2-b47979ecdbd3.png)
 2. Run ColorFinder
-https://user-images.githubusercontent.com/24358893/28470281-46cbbf66-6e07-11e7-8b20-b293608e0380.png
+![screenshot 25](https://user-images.githubusercontent.com/24358893/28470281-46cbbf66-6e07-11e7-8b20-b293608e0380.png)
 3. Find the upper and lower bounds of the color
- https://user-images.githubusercontent.com/24358893/28470280-46cb51ca-6e07-11e7-999a-637814b56c92.png
+<img width="960" alt="screenshot 26" src="https://user-images.githubusercontent.com/24358893/28470280-46cb51ca-6e07-11e7-999a-637814b56c92.png">
 4. Having found the color range, put the images into the “Pictures” folder in TestTube
- 
+![screenshot 27](https://user-images.githubusercontent.com/24358893/28470282-46ce1b6c-6e07-11e7-95c5-7b1af2389431.png)
 5. Run the TestTube application
 <insert photo here>
 6. Set the duration between each image (it is assumed between 5-60 seconds) and the upper and lower bounds of your color range that you found in ColorFinder. Hit “Confirm” to advance to the next window.
- 
+![screenshot 28](https://user-images.githubusercontent.com/24358893/28470284-46d627a8-6e07-11e7-8b98-0ba4752e8231.png)
 7. By clicking and dragging your mouse, select the Region of Interest (ROI) for the program to scan. It will appear as a black rectangle.
 <insert image here>
 
 8. Release the mouse and the program will run through all the images in the “Pictures” folder, then exit.
 
 9. Click on the “data.txt” file to see your data in print form.
- 
+![screenshot 31](https://user-images.githubusercontent.com/24358893/28470288-46df1e6c-6e07-11e7-8916-4ba8359c3f8d.png)
+![screenshot 32](https://user-images.githubusercontent.com/24358893/28470286-46d8a230-6e07-11e7-84e6-79a8a8d58922.png)
 10. You can also see your data in Excell by opening the “data.csv” file
-
+![screenshot 33](https://user-images.githubusercontent.com/24358893/28470287-46dd67ac-6e07-11e7-9f28-93f3ffc63399.png)
+![screenshot 34](https://user-images.githubusercontent.com/24358893/28470289-46ec18b0-6e07-11e7-8797-1eaa3fc2c05e.png)
  
 NOTE: If the returned value is 999, it is the programs's error message and means that it found nothing with in that ROI and color range. 
 

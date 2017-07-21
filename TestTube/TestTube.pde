@@ -185,6 +185,10 @@ void Confirm(){
   }
   confirm++;
 }
+/**
+* Saves the table as a .csv file so it can be looked at in Excel. 
+*
+**/
 void saveCSV(){
   Table table = new Table();
   table.addColumn("Image");

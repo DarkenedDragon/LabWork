@@ -8,6 +8,7 @@ Instructions for use:
 4. Let the program run. It may take several minutes depending on the amount of pictures you are processing. The results can be found in the data.txt and data.csv files.
 
 NOTE: If the returned value is 999, it is the programs's error message and means that it found nothing with in that ROI and color range. 
+
 Common errors:
 1. Same values for each picture:
 	This means that the software has found an instance of the color you are scanning for in an unexpected and immobile place and it is the lowest

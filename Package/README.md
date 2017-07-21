@@ -7,7 +7,7 @@ This software is intended to be used to measure the progress of a moving or exap
 2. Run ColorFinder
 ![screenshot 25](https://user-images.githubusercontent.com/24358893/28470281-46cbbf66-6e07-11e7-8b20-b293608e0380.png)
 
-3. Find the upper and lower bounds of the color
+3. Find the upper and lower bounds of the color. Use the left and right arrow keys to rotate through the color ranges, and the up and down arrow keys to move through the pictures in the "Pictures" folder
 <img width="960" alt="screenshot 26" src="https://user-images.githubusercontent.com/24358893/28470280-46cb51ca-6e07-11e7-999a-637814b56c92.png">
 
 4. Having found the color range, put the images into the “Pictures” folder in TestTube
@@ -29,7 +29,7 @@ This software is intended to be used to measure the progress of a moving or exap
 ![screenshot 31](https://user-images.githubusercontent.com/24358893/28470288-46df1e6c-6e07-11e7-8916-4ba8359c3f8d.png)
 ![screenshot 32](https://user-images.githubusercontent.com/24358893/28470286-46d8a230-6e07-11e7-84e6-79a8a8d58922.png)
 
-10. You can also see your data in Excell by opening the “data.csv” file
+10. You can also see your data in Excell by opening the “dataX.csv” file
 ![screenshot 33](https://user-images.githubusercontent.com/24358893/28470287-46dd67ac-6e07-11e7-9f28-93f3ffc63399.png)
 ![screenshot 34](https://user-images.githubusercontent.com/24358893/28470289-46ec18b0-6e07-11e7-8797-1eaa3fc2c05e.png)
  

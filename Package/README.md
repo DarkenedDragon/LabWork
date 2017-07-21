@@ -1,12 +1,28 @@
 # LabWork
 This software is intended to be used to measure the progress of a moving or exapanding colored object.
 
-Instructions for use:
-1. Use the ColorFinder program to find the color range that your object is in. 
-2. Once you have that range, run the TestTube program and input the upper and lower bounds of the range you just obtained from ColorFinder
-3. Select the Region of Interest(ROI) by dragging a rectangle around the area you wish to process. 
-4. Let the program run. It may take several minutes depending on the amount of pictures you are processing. The results can be found in the data.txt and data.csv files.
+1. Transfer the pictures you wish to scan into the "Pictures" folder in ColorFinder.
+ 
+2. Run ColorFinder
 
+3. Find the upper and lower bounds of the color
+ 
+4. Having found the color range, put the images into the “Pictures” folder in TestTube
+ 
+5. Run the TestTube application
+<insert photo here>
+6. Set the duration between each image (it is assumed between 5-60 seconds) and the upper and lower bounds of your color range that you found in ColorFinder. Hit “Confirm” to advance to the next window.
+ 
+7. By clicking and dragging your mouse, select the Region of Interest (ROI) for the program to scan. It will appear as a black rectangle.
+<insert image here>
+
+8. Release the mouse and the program will run through all the images in the “Pictures” folder, then exit.
+
+9. Click on the “data.txt” file to see your data in print form.
+ 
+10. You can also see your data in Excell by opening the “data.csv” file
+
+ 
 NOTE: If the returned value is 999, it is the programs's error message and means that it found nothing with in that ROI and color range. 
 
 Common errors:
